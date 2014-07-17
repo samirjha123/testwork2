@@ -53,7 +53,7 @@ end
 
 service "zabbix_agentd" do
   supports :status => true, :start => true, :stop => true
-  action [ :start, :enable ]
+  action :start 
 end
 
 include_recipe "zabbix::unmonitor_this_host_on_shutdown" if node.zabbix.agent.unmonitor_on_shutdown
